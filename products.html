@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkte | Exklusives Kosmetikstudio Hanau</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;0,600&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .product-card {
+            border: 1px solid var(--color-beige-dark);
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--color-beige-dark);
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-img-wrapper {
+            overflow: hidden;
+        }
+
+        .product-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            font-family: var(--font-heading);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">AURELIA</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="about.html">Über uns</a>
+                <a href="services.html">Leistungen & Preise</a>
+                <a href="products.html">Produkte</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header"
+            style="background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('assets/premium_serum_1772187792490.png'); background-size: cover; background-position: center;">
+            <div class="container text-center">
+                <h1 class="animate-on-scroll">Exklusive Hautpflege-Boutique</h1>
+                <p class="animate-on-scroll" style="font-size: 1.25rem; color: var(--color-text-dark);">Professionelle
+                    Pflegeprodukte für Ihre Routine zu Hause.</p>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-3">
+                    <!-- Product 1 -->
+                    <div class="card product-card animate-on-scroll">
+                        <div class="product-img-wrapper">
+                            <img src="assets/premium_serum_1772187792490.png" alt="Premium Gesichtsserum"
+                                class="product-img" style="object-position: center 20%;">
+                        </div>
+                        <div class="product-content">
+                            <h3>Premium Gesichtsserum</h3>
+                            <p>Hochkonzentrierte Wirkstoffe für einen sofortigen Glow und tiefe Feuchtigkeitsversorgung.
+                                Geeignet
+                                für alle Hauttypen.</p>
+                            <span class="product-price">€49.00</span>
+                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="card product-card animate-on-scroll" style="transition-delay: 0.1s;">
+                        <div class="product-img-wrapper">
+                            <img src="assets/anti_aging_cream_1772190334194.png" alt="Anti-Aging Creme"
+                                class="product-img">
+                        </div>
+                        <div class="product-content">
+                            <h3>Anti-Aging Creme</h3>
+                            <p>Reichhaltige, verjüngende Nachtcreme, die die nächtliche Hautregeneration unterstützt und
+                                feine Linien sichtbar mildert.</p>
+                            <span class="product-price">€59.00</span>
+                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="card product-card animate-on-scroll" style="transition-delay: 0.2s;">
+                        <div class="product-img-wrapper">
+                            <img src="assets/cleansing_milk_1772190349420.png" alt="Reinigungsmilch"
+                                class="product-img">
+                        </div>
+                        <div class="product-content">
+                            <h3>Reinigungsmilch</h3>
+                            <p>Sanfte und klärende Reinigungsmilch. Entfernt Make-up und Unreinheiten, ohne Ihre Haut
+                                auszutrocknen.</p>
+                            <span class="product-price">€29.00</span>
+                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="card product-card animate-on-scroll" style="transition-delay: 0.3s;">
+                        <div class="product-img-wrapper">
+                            <img src="assets/services_treatment_1772187810376.png" alt="Feuchtigkeitsmaske"
+                                class="product-img">
+                        </div>
+                        <div class="product-content">
+                            <h3>Feuchtigkeitsmaske</h3>
+                            <p>Ein SOS-Feuchtigkeits-Boost. Diese luxuriöse Maske hinterlässt Ihr Gesicht unglaublich
+                                weich und
+                                tiefenwirksam genährt.</p>
+                            <span class="product-price">€39.00</span>
+                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5: Complementary to Anti-Aging -->
+                    <div class="card product-card animate-on-scroll" style="transition-delay: 0.4s;">
+                        <div class="product-img-wrapper">
+                            <img src="assets/regenerating_eye_serum_1772190361539.png" alt="Regenerierendes Augenserum"
+                                class="product-img">
+                        </div>
+                        <div class="product-content">
+                            <h3>Regenerierendes Augenserum</h3>
+                            <p>Der perfekte Begleiter zu unserer Anti-Aging-Creme. Zielt auf die empfindliche
+                                Augenpartie ab, um
+                                Schwellungen und dunkle Augenringe zu reduzieren.</p>
+                            <span class="product-price">€45.00</span>
+                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6: Complementary to Cleansing Milk -->
+                    <div class="card product-card animate-on-scroll" style="transition-delay: 0.5s;">
+                        <div class="product-img-wrapper">
+                            <img src="assets/balancing_toner_1772190374741.png" alt="Ausgleichendes Gesichtswasser"
+                                class="product-img">
+                        </div>
+                        <div class="product-content">
+                            <h3>Ausgleichendes Gesichtswasser</h3>
+                            <p>Folgt perfekt auf unsere Reinigungsmilch. Stellt das natürliche pH-Gleichgewicht wieder
+                                her und bereitet Ihre Haut darauf vor,
+                                Seren direkt aufzunehmen.</p>
+                            <span class="product-price">€32.00</span>
+                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Studio Hanau</h4>
+                    <p>Am Tümpelgarten 19<br>63450 Hanau, Hessen</p>
+                    <p style="margin-top: 1rem;">Telefon: +49 155 6628 4478<br>E-Mail: <a
+                            href="mailto:info@webtech-agentur.de"
+                            style="text-transform: none; letter-spacing: normal;">info@aureliastudio.de</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Öffnungszeiten</h4>
+                    <ul>
+                        <li>Mo - Fr: 09:00 - 19:00</li>
+                        <li>Samstag: 10:00 - 16:00</li>
+                        <li>Sonntag: Geschlossen</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Schnellzugriff</h4>
+                    <ul>
+                        <li><a href="about.html">Über uns</a></li>
+                        <li><a href="services.html">Leistungen</a></li>
+                        <li><a href="products.html">Produkte</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="imprint.html">Impressum</a></li>
+                        <li><a href="terms.html">AGB</a></li>
+                        <li><a href="privacy.html">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelia Studio. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

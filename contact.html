@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Exklusives Kosmetikstudio Hanau</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info-block {
+            background-color: var(--color-beige);
+            padding: 3rem;
+            border-radius: 4px;
+            height: 100%;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h4 {
+            color: var(--color-gold);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: var(--color-text-dark);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">AURELIA</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="about.html">Über uns</a>
+                <a href="services.html">Leistungen & Preise</a>
+                <a href="products.html">Produkte</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header"
+            style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('assets/home_hero_studio_1772187780330.png'); background-size: cover; background-position: center;">
+            <div class="container text-center">
+                <h1 class="animate-on-scroll">Kontaktieren Sie uns</h1>
+                <p class="animate-on-scroll" style="font-size: 1.25rem; color: var(--color-text-dark);">Wir freuen uns
+                    darauf, Sie willkommen zu heißen.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <div class="container contact-grid">
+
+                <!-- Contact Info -->
+                <div class="contact-info-block animate-on-scroll">
+                    <h2>Nehmen Sie Kontakt auf</h2>
+                    <p style="margin-bottom: 3rem;">Bereit für Ihre nächste Entspannungseinheit? Kontaktieren Sie uns
+                        direkt oder nutzen Sie
+                        das Formular, um einen Termin zu vereinbaren.</p>
+
+                    <div class="info-item">
+                        <h4>Adresse</h4>
+                        <p>Am Tümpelgarten 19<br>63450 Hanau, Hessen</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Telefon</h4>
+                        <p>+49 155 6628 4478</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>E-Mail</h4>
+                        <p><a href="mailto:info@webtech-agentur.de">info@aureliastudio.de</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Öffnungszeiten</h4>
+                        <p>Mo - Fr: 09:00 - 19:00<br>
+                            Samstag: 10:00 - 16:00<br>
+                            Sonntag: Geschlossen</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div class="form-group">
+                                <label for="name">Vollständiger Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefonnummer</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail-Adresse</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Interessiert an (Optional)</label>
+                            <select id="service" class="form-control"
+                                style="appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=%22%23333%22 height=%2224%22 viewBox=%220 0 24 24%22 width=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/></svg>'); background-repeat: no-repeat; background-position-x: 98%; background-position-y: 50%;">
+                                <option value="">Bitte eine Leistung wählen...</option>
+                                <option value="facial">Gesichtsbehandlung</option>
+                                <option value="anti_aging">Anti-Aging</option>
+                                <option value="lashes">Wimpernverlängerung</option>
+                                <option value="pmu">Permanent Make-Up</option>
+                                <option value="microneedling">Microneedling</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Ihre Nachricht</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Google Maps Full Width -->
+        <section class="animate-on-scroll">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.777037775535!2d8.932918815714407!3d50.13322137943187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ee8847844a1%3A0xe5a3c260268571fa!2sAm%20T%C3%BCmpelgarten%2019%2C%2063450%20Hanau!5e0!3m2!1sen!2sde!4v1714488800000!5m2!1sen!2sde"
+                width="100%" height="500" style="border:0; display: block;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Studio Hanau</h4>
+                    <p>Am Tümpelgarten 19<br>63450 Hanau, Hessen</p>
+                    <p style="margin-top: 1rem;">Telefon: +49 155 6628 4478<br>E-Mail: <a
+                            href="mailto:info@webtech-agentur.de"
+                            style="text-transform: none; letter-spacing: normal;">info@aureliastudio.de</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Öffnungszeiten</h4>
+                    <ul>
+                        <li>Mo - Fr: 09:00 - 19:00</li>
+                        <li>Samstag: 10:00 - 16:00</li>
+                        <li>Sonntag: Geschlossen</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Schnellzugriff</h4>
+                    <ul>
+                        <li><a href="about.html">Über uns</a></li>
+                        <li><a href="services.html">Leistungen</a></li>
+                        <li><a href="products.html">Produkte</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="imprint.html">Impressum</a></li>
+                        <li><a href="terms.html">AGB</a></li>
+                        <li><a href="privacy.html">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelia Studio. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
