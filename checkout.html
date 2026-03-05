@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zur Kasse | Aurelia Studio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .checkout-section {
+            margin-bottom: 3rem;
+        }
+
+        .checkout-section h3 {
+            border-bottom: 1px solid var(--color-beige-dark);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .order-summary {
+            background-color: var(--color-beige);
+            padding: 2.5rem;
+            border-radius: 4px;
+            position: sticky;
+            top: 120px;
+        }
+
+        .order-summary h3 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-beige-dark);
+        }
+
+        .summary-total {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        .payment-methods {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .payment-option {
+            border: 1px solid var(--color-beige-dark);
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .payment-option:hover {
+            border-color: var(--color-gold);
+            background-color: var(--color-white);
+        }
+
+        .payment-option input {
+            cursor: pointer;
+        }
+
+        .payment-option.active {
+            border-color: var(--color-gold);
+            background-color: var(--color-white);
+            box-shadow: var(--shadow-subtle);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">AURELIA</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="about.html">Über uns</a>
+                <a href="services.html">Leistungen & Preise</a>
+                <a href="products.html">Produkte</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="cart-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main style="margin-top: 90px;">
+        <section class="section">
+            <div class="container">
+                <h2>Kasse</h2>
+
+                <div class="checkout-grid">
+                    <div class="checkout-form-container">
+                        <form id="checkout-form">
+                            <div class="checkout-section">
+                                <h3>Persönliche Informationen</h3>
+                                <div class="grid grid-2" style="grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                    <div class="form-group">
+                                        <label for="fname">Vorname</label>
+                                        <input type="text" id="fname" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lname">Nachname</label>
+                                        <input type="text" id="lname" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-Mail Adresse</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefonnummer</label>
+                                    <input type="tel" id="phone" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="checkout-section">
+                                <h3>Versandadresse</h3>
+                                <div class="form-group">
+                                    <label for="address">Straße und Hausnummer</label>
+                                    <input type="text" id="address" class="form-control" required>
+                                </div>
+                                <div class="grid grid-2" style="grid-template-columns: 1fr 2fr; gap: 1.5rem;">
+                                    <div class="form-group">
+                                        <label for="zip">PLZ</label>
+                                        <input type="text" id="zip" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">Stadt</label>
+                                        <input type="text" id="city" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checkout-section">
+                                <h3>Zahlungsmethode</h3>
+                                <div class="payment-methods">
+                                    <label class="payment-option active">
+                                        <input type="radio" name="payment" value="card" checked>
+                                        <span>Kredit- oder Debitkarte</span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="paypal">
+                                        <span>PayPal</span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="bank">
+                                        <span>Überweisung</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Bestellung
+                                abschließen</button>
+                        </form>
+                    </div>
+
+                    <div class="order-summary">
+                        <h3>Bestellübersicht</h3>
+                        <div id="checkout-items">
+                            <!-- Items will be injected by JS -->
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Zwischensumme</span>
+                            <span id="summary-subtotal">€0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Versand</span>
+                            <span>Kostenlos</span>
+                        </div>
+                        <div class="summary-row summary-total">
+                            <span>Gesamtbetrag</span>
+                            <span id="summary-total">€0.00</span>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--color-text-light); margin-top: 1.5rem;">
+                            Inkl. MwSt. 19%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelia Studio. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer & Overlay -->
+    <div id="cart-overlay"></div>
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>Warenkorb</h2>
+            <button class="cart-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Zwischensumme</span>
+                <span class="cart-subtotal-amount">€0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary">Zur Kasse</a>
+            <button class="btn btn-outline cart-close">Weiter einkaufen</button>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Specific checkout logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkoutItems = document.getElementById('checkout-items');
+            const summarySubtotal = document.getElementById('summary-subtotal');
+            const summaryTotal = document.getElementById('summary-total');
+
+            function renderCheckout() {
+                const cart = JSON.parse(localStorage.getItem('aurelia_cart')) || [];
+                if (cart.length === 0 && window.location.pathname.includes('checkout.html')) {
+                    // Redirect back to products if cart is empty
+                    // window.location.href = 'products.html';
+                }
+
+                checkoutItems.innerHTML = cart.map(item => `
+                    <div class="order-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>€${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join('');
+
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                summarySubtotal.textContent = `€${subtotal.toFixed(2)}`;
+                summaryTotal.textContent = `€${subtotal.toFixed(2)}`;
+            }
+
+            renderCheckout();
+
+            // Handle payment option styling
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    paymentOptions.forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                });
+            });
+
+            // Handle form submission
+            const checkoutForm = document.getElementById('checkout-form');
+            if (checkoutForm) {
+                checkoutForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Vielen Dank für Ihre Bestellung! Wir haben eine Bestätigung an Ihre E-Mail gesendet.');
+                    localStorage.removeItem('aurelia_cart');
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

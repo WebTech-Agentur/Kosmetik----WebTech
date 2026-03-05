@@ -28,11 +28,22 @@
                 <a href="products.html">Produkte</a>
                 <a href="contact.html">Kontakt</a>
             </nav>
-            <button class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <div class="cart-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -196,7 +207,33 @@
         </div>
     </footer>
 
+        <!-- Cart Drawer & Overlay -->
+    <div id="cart-overlay"></div>
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>Warenkorb</h2>
+            <button class="cart-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items">
+            <!-- Items will be injected by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Zwischensumme</span>
+                <span class="cart-subtotal-amount">€0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary">Zur Kasse</a>
+            <button class="btn btn-outline cart-close">Weiter einkaufen</button>
+        </div>
+    </div>
+
     <script src="js/scripts.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

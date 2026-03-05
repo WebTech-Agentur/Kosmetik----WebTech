@@ -69,11 +69,22 @@
                 <a href="products.html">Produkte</a>
                 <a href="contact.html">Kontakt</a>
             </nav>
-            <button class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <div class="cart-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -104,7 +115,16 @@
                                 Geeignet
                                 für alle Hauttypen.</p>
                             <span class="product-price">€49.00</span>
-                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                            <div style="display: flex; gap: 1rem; margin-top: auto;">
+                                <button class="btn btn-outline btn-add-to-cart" data-id="p1"
+                                    data-name="Premium Gesichtsserum" data-price="49"
+                                    data-image="assets/premium_serum_1772187792490.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">In den Warenkorb</button>
+                                <button class="btn btn-primary btn-buy-now" data-id="p1"
+                                    data-name="Premium Gesichtsserum" data-price="49"
+                                    data-image="assets/premium_serum_1772187792490.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">Jetzt kaufen</button>
+                            </div>
                         </div>
                     </div>
 
@@ -119,7 +139,15 @@
                             <p>Reichhaltige, verjüngende Nachtcreme, die die nächtliche Hautregeneration unterstützt und
                                 feine Linien sichtbar mildert.</p>
                             <span class="product-price">€59.00</span>
-                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                            <div style="display: flex; gap: 1rem; margin-top: auto;">
+                                <button class="btn btn-outline btn-add-to-cart" data-id="p2"
+                                    data-name="Anti-Aging Creme" data-price="59"
+                                    data-image="assets/anti_aging_cream_1772190334194.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">In den Warenkorb</button>
+                                <button class="btn btn-primary btn-buy-now" data-id="p2" data-name="Anti-Aging Creme"
+                                    data-price="59" data-image="assets/anti_aging_cream_1772190334194.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">Jetzt kaufen</button>
+                            </div>
                         </div>
                     </div>
 
@@ -134,7 +162,14 @@
                             <p>Sanfte und klärende Reinigungsmilch. Entfernt Make-up und Unreinheiten, ohne Ihre Haut
                                 auszutrocknen.</p>
                             <span class="product-price">€29.00</span>
-                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                            <div style="display: flex; gap: 1rem; margin-top: auto;">
+                                <button class="btn btn-outline btn-add-to-cart" data-id="p3" data-name="Reinigungsmilch"
+                                    data-price="29" data-image="assets/cleansing_milk_1772190349420.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">In den Warenkorb</button>
+                                <button class="btn btn-primary btn-buy-now" data-id="p3" data-name="Reinigungsmilch"
+                                    data-price="29" data-image="assets/cleansing_milk_1772190349420.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">Jetzt kaufen</button>
+                            </div>
                         </div>
                     </div>
 
@@ -150,7 +185,15 @@
                                 weich und
                                 tiefenwirksam genährt.</p>
                             <span class="product-price">€39.00</span>
-                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                            <div style="display: flex; gap: 1rem; margin-top: auto;">
+                                <button class="btn btn-outline btn-add-to-cart" data-id="p4"
+                                    data-name="Feuchtigkeitsmaske" data-price="39"
+                                    data-image="assets/services_treatment_1772187810376.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">In den Warenkorb</button>
+                                <button class="btn btn-primary btn-buy-now" data-id="p4" data-name="Feuchtigkeitsmaske"
+                                    data-price="39" data-image="assets/services_treatment_1772187810376.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">Jetzt kaufen</button>
+                            </div>
                         </div>
                     </div>
 
@@ -166,7 +209,16 @@
                                 Augenpartie ab, um
                                 Schwellungen und dunkle Augenringe zu reduzieren.</p>
                             <span class="product-price">€45.00</span>
-                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                            <div style="display: flex; gap: 1rem; margin-top: auto;">
+                                <button class="btn btn-outline btn-add-to-cart" data-id="p5"
+                                    data-name="Regenerierendes Augenserum" data-price="45"
+                                    data-image="assets/regenerating_eye_serum_1772190361539.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">In den Warenkorb</button>
+                                <button class="btn btn-primary btn-buy-now" data-id="p5"
+                                    data-name="Regenerierendes Augenserum" data-price="45"
+                                    data-image="assets/regenerating_eye_serum_1772190361539.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">Jetzt kaufen</button>
+                            </div>
                         </div>
                     </div>
 
@@ -182,7 +234,16 @@
                                 her und bereitet Ihre Haut darauf vor,
                                 Seren direkt aufzunehmen.</p>
                             <span class="product-price">€32.00</span>
-                            <button class="btn btn-primary" style="margin-top: auto; width: 100%;">Jetzt kaufen</button>
+                            <div style="display: flex; gap: 1rem; margin-top: auto;">
+                                <button class="btn btn-outline btn-add-to-cart" data-id="p6"
+                                    data-name="Ausgleichendes Gesichtswasser" data-price="32"
+                                    data-image="assets/balancing_toner_1772190374741.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">In den Warenkorb</button>
+                                <button class="btn btn-primary btn-buy-now" data-id="p6"
+                                    data-name="Ausgleichendes Gesichtswasser" data-price="32"
+                                    data-image="assets/balancing_toner_1772190374741.png"
+                                    style="padding: 0.8rem 1rem; flex: 1; font-size: 0.75rem;">Jetzt kaufen</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -233,7 +294,33 @@
         </div>
     </footer>
 
+        <!-- Cart Drawer & Overlay -->
+    <div id="cart-overlay"></div>
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>Warenkorb</h2>
+            <button class="cart-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items">
+            <!-- Items will be injected by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Zwischensumme</span>
+                <span class="cart-subtotal-amount">�0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary">Zur Kasse</a>
+            <button class="btn btn-outline cart-close">Weiter einkaufen</button>
+        </div>
+    </div>
+
     <script src="js/scripts.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
