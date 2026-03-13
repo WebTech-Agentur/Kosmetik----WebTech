@@ -75,35 +75,116 @@
 
         .payment-methods {
             display: grid;
-            gap: 1rem;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
         }
 
-        .payment-option {
+        .payment-option-card {
             border: 1px solid var(--color-beige-dark);
-            padding: 1rem;
-            border-radius: 4px;
+            padding: 1.25rem;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
             transition: var(--transition-smooth);
-        }
-
-        .payment-option:hover {
-            border-color: var(--color-gold);
             background-color: var(--color-white);
+            position: relative;
         }
 
-        .payment-option input {
-            cursor: pointer;
-        }
-
-        .payment-option.active {
+        .payment-option-card:hover {
             border-color: var(--color-gold);
-            background-color: var(--color-white);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-subtle);
         }
+
+        .payment-option-card.active {
+            border-color: var(--color-gold);
+            background-color: var(--color-beige);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.1);
+        }
+
+        .payment-info {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+        }
+
+        .payment-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .payment-label {
+            font-weight: 500;
+            color: var(--color-text-dark);
+        }
+
+        .payment-radio {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--color-beige-dark);
+            border-radius: 50%;
+            outline: none;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .payment-radio:checked {
+            border-color: var(--color-gold);
+        }
+
+        .payment-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-gold);
+            border-radius: 50%;
+        }
+
+        .payment-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        .payment-details.active {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .details-inner {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-beige-dark);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .card-expiry-cvc {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
     </style>
+    <link rel='icon' type='image/png' href='favicon.png'>
 </head>
 
 <body>
@@ -189,18 +270,102 @@
                             <div class="checkout-section">
                                 <h3>Zahlungsmethode</h3>
                                 <div class="payment-methods">
-                                    <label class="payment-option active">
-                                        <input type="radio" name="payment" value="card" checked>
-                                        <span>Kredit- oder Debitkarte</span>
-                                    </label>
-                                    <label class="payment-option">
-                                        <input type="radio" name="payment" value="paypal">
-                                        <span>PayPal</span>
-                                    </label>
-                                    <label class="payment-option">
-                                        <input type="radio" name="payment" value="bank">
-                                        <span>Überweisung</span>
-                                    </label>
+                                    <!-- Kreditkarte -->
+                                    <div class="payment-group">
+                                        <label class="payment-option-card active" for="pay-card">
+                                            <div class="payment-info">
+                                                <div class="payment-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                                                    </svg>
+                                                </div>
+                                                <span class="payment-label">Kreditkarte</span>
+                                            </div>
+                                            <input type="radio" id="pay-card" name="payment" value="card"
+                                                class="payment-radio" checked>
+                                        </label>
+                                        <div id="card-details" class="payment-details active">
+                                            <div class="details-inner">
+                                                <div class="form-group">
+                                                    <label for="card-num">Kartennummer</label>
+                                                    <input type="text" id="card-num" class="form-control"
+                                                        placeholder="0000 0000 0000 0000">
+                                                </div>
+                                                <div class="card-expiry-cvc">
+                                                    <div class="form-group">
+                                                        <label for="card-exp">Ablaufdatum</label>
+                                                        <input type="text" id="card-exp" class="form-control"
+                                                            placeholder="MM / YY">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="card-cvc">CVC</label>
+                                                        <input type="text" id="card-cvc" class="form-control"
+                                                            placeholder="123">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PayPal -->
+                                    <div class="payment-group">
+                                        <label class="payment-option-card" for="pay-paypal">
+                                            <div class="payment-info">
+                                                <div class="payment-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                                        <path d="M2 17l10 5 10-5"></path>
+                                                        <path d="M2 12l10 5 10-5"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="payment-label">PayPal</span>
+                                            </div>
+                                            <input type="radio" id="pay-paypal" name="payment" value="paypal"
+                                                class="payment-radio">
+                                        </label>
+                                        <div id="paypal-details" class="payment-details">
+                                            <div class="details-inner">
+                                                <p style="font-size: 0.9rem; margin-bottom: 0;">Sie werden nach der
+                                                    Bestellung sicher zu PayPal weitergeleitet.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Banküberweisung -->
+                                    <div class="payment-group">
+                                        <label class="payment-option-card" for="pay-bank">
+                                            <div class="payment-info">
+                                                <div class="payment-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <rect x="3" y="10" width="18" height="9" rx="2"></rect>
+                                                        <path d="M3 10V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"></path>
+                                                        <path d="M12 4v16"></path>
+                                                        <path d="M8 4v4"></path>
+                                                        <path d="M16 4v4"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="payment-label">Überweisung</span>
+                                            </div>
+                                            <input type="radio" id="pay-bank" name="payment" value="bank"
+                                                class="payment-radio">
+                                        </label>
+                                        <div id="bank-details" class="payment-details">
+                                            <div class="details-inner">
+                                                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Bitte überweisen
+                                                    Sie den Betrag an:</p>
+                                                <p
+                                                    style="font-size: 0.85rem; line-height: 1.4; color: var(--color-text-dark); margin-bottom: 0;">
+                                                    <strong>Aurelia Studio GmbH</strong><br>
+                                                    IBAN: DE89 1234 5678 9012 3456 78<br>
+                                                    BIC: GENO DE F1 ABC
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -264,7 +429,6 @@
                 <span class="cart-subtotal-amount">€0.00</span>
             </div>
             <a href="checkout.html" class="btn btn-primary">Zur Kasse</a>
-            <button class="btn btn-outline cart-close">Weiter einkaufen</button>
         </div>
     </div>
 
@@ -298,12 +462,25 @@
 
             renderCheckout();
 
-            // Handle payment option styling
-            const paymentOptions = document.querySelectorAll('.payment-option');
-            paymentOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    paymentOptions.forEach(opt => opt.classList.remove('active'));
-                    option.classList.add('active');
+            // Handle payment option styling and collapsing
+            const paymentRadios = document.querySelectorAll('.payment-radio');
+            const paymentDetails = document.querySelectorAll('.payment-details');
+            const paymentOptionCards = document.querySelectorAll('.payment-option-card');
+
+            paymentRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    // Reset all
+                    paymentDetails.forEach(detail => detail.classList.remove('active'));
+                    paymentOptionCards.forEach(card => card.classList.remove('active'));
+
+                    // Activate current
+                    const parentCard = radio.closest('.payment-option-card');
+                    const targetDetail = radio.closest('.payment-group').querySelector('.payment-details');
+
+                    if (radio.checked) {
+                        parentCard.classList.add('active');
+                        if (targetDetail) targetDetail.classList.add('active');
+                    }
                 });
             });
 
